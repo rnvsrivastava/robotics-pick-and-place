@@ -72,3 +72,4 @@ This project is intended to practice:
 ## Limitations of the first version
 
 The initial demonstration will use known object positions. It will not detect objects with a camera, simulate physical contact, or send commands to real motors.
+
