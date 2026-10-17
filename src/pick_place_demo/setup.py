@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'pick_place_demo'
 
@@ -10,12 +12,14 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.urdf')),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
     package_data={'': ['py.typed']},
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='rnvsrivastava',
-    maintainer_email='rnvsrivastava@gmail.com',
+    maintainer_email='rangasrivastava@gmail.com',
     description='TODO: Package description',
     license='MIT',
     extras_require={
