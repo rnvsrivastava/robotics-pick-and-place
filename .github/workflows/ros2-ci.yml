@@ -1,0 +1,30 @@
+name: ROS 2 CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build and test on ROS 2 Lyrical
+    runs-on: ubuntu-latest
+    container:
+      image: rostooling/setup-ros-docker:ubuntu-resolute-latest
+    steps:
+      - name: Build and run package tests
+        uses: ros-tooling/action-ros-ci@v0.4
+        with:
+          package-name: pick_place_demo
+          target-ros2-distro: lyrical
+          coverage-result: false
