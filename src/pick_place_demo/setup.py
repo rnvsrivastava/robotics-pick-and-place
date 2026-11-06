@@ -1,6 +1,7 @@
-from setuptools import find_packages, setup
-import os
 from glob import glob
+import os
+
+from setuptools import find_packages, setup
 
 package_name = 'pick_place_demo'
 
@@ -19,7 +20,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='rnvsrivastava',
-    maintainer_email='rangasrivastava@gmail.com',
+    maintainer_email='rnv@gmail.com',
     description='TODO: Package description',
     license='MIT',
     extras_require={
